@@ -1,0 +1,104 @@
+h1{
+    text-align: center;
+    font-size: 2.5em;
+    text-decoration: underline;
+}
+p{
+    text-align: center;
+}
+h2{
+    font-size: large;
+    font-size: 1.5em;
+    margin-left: 10px;
+}
+body{
+    background-color: #D3C5E5;
+    border: solid 3px #656868;
+    margin: 20px;
+    padding-top: 30px
+}
+button{
+    background-color: #8b78b8;
+    border: solid #dddcdc 2px;
+    padding: 2px;
+    margin: 10px;
+    font-size: 22px;
+    transition-duration: 0.4s;
+}
+button:hover{
+    background-color: #dddcdc;
+}
+#checkout{
+    padding-top: 20px;
+    padding-left: 5px;
+    margin-left: 25px;
+}#checkout1{
+    
+    padding-left: 5px;
+    margin-left: 25px;
+}
+#boxes{
+    display: flex;
+    
+    
+}
+#leftbox{
+    background-color: #8b78b8;
+    float:left;
+    width: 50%;
+    margin-right: 30px;
+    margin-left: 30px;
+    box-shadow: 5px 5px;
+    padding:3px;
+    
+}
+#rightbox{
+    background-color: #8b78b8;
+    float: right;
+    width: 50%;
+    margin-right: 30px;
+    margin-left: 30px;
+    box-shadow: 5px 5px;
+    padding:3px;
+}
+#middlebox{
+    background-color: #8b78b8;
+    float:left;
+    width: 50%;
+    box-shadow: 5px 5px;
+    padding:3px;
+}
+.red{
+    color: rgb(255, 255, 255);
+    margin-left: 10px;
+
+}
+.blue{
+    color: #b0f6b7;
+    margin-left: 10px;
+}
+#btn-dec-1, #btn-dec-2, #btn-dec-3{
+    visibility: hidden;
+}
+.container{
+    display:flex;
+}
+.rightcont{
+    float:left;
+    width:50%;
+}
+.leftcont{
+    float:right;
+    width:50%;
+}
+.midcont{
+    float:left;
+    width:50%;
+}
+.price{
+    padding-left: 10px;
+    font-size: 1.3em;
+}
+#checkout1{
+    font-size: 2em;
+}

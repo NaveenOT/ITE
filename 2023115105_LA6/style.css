@@ -1,0 +1,123 @@
+h1{
+    text-align: center;
+}
+body{
+    text-align: center;
+}
+.container{
+    display: flex;
+}
+#inputbox{
+    float: left;
+    width: 100%;
+
+}
+#addtask{
+    float: right;
+    width: 50%;
+    padding-left: 10px; 
+    cursor: pointer; 
+}
+ul{
+    list-style-type: none;
+    text-align: left;
+}
+textarea{
+    font-size: 1em;
+}
+#planner{
+    border: solid 2px #000000;
+    margin-top: 120px;
+    margin-right: 50px;
+    margin-left: 50px;
+    padding: 30px;
+    background-color: beige;
+}
+li{
+    background-color: #cdcbcb;
+    padding-left: 20px;
+    border: solid 2px black;
+    margin-bottom: 3px;
+    font-size: 20px;
+}
+#addtaskbtn{
+    padding: 7px;
+    margin-left: 10px;
+    font-size: 15px;
+    background-color: white;
+    border-radius: 12px;
+    cursor: pointer;
+}
+.complete{
+    background-color: rgb(95, 220, 95);
+    padding-left: 10px;
+    border-radius: 12px;
+    padding-right: 10px;
+    margin-left: 15px;
+    margin-top: 5px;
+    margin-right: 5px;
+    margin-bottom: 5px;
+}
+.del{
+    background-color: rgb(220, 108, 108);
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-left: 15px;
+    margin-top: 5px;
+    margin-right: 5px;
+    margin-bottom: 5px;
+    border-radius: 12px;
+}
+#alltaskbtn{
+    margin: 10px;
+    cursor: pointer;
+    padding: 10px 15px 10px 15px;
+    font-size: 18px;
+    border-radius: 12px;
+    box-shadow: 0 6px #999;
+    background-color: rgb(91, 179, 195);
+}
+#compbtn{
+    margin: 10px;
+    font-size: 18px;
+    border-radius: 12px;
+    padding: 10px;
+    cursor: pointer;
+    background-color: rgb(112, 173, 125);
+    box-shadow: 0 6px #999;
+}
+#activebtn{
+    margin: 10px;
+    padding: 10px 30px 10px 30px;
+    font-size: 18px;
+    border-radius: 12px;
+    cursor: pointer;
+    background-color: rgb(235, 211, 139);
+    box-shadow: 0 6px #999;
+}
+#taskcntbtn{
+    margin: 10px;
+    padding: 12px;
+    font-size: 15px;
+    border-radius: 12px;
+    cursor: pointer;
+    background-color: rgb(224, 230, 59);
+    box-shadow: 0 6px #999;
+}
+#taskcntbtn:active {
+    box-shadow: 0 4px #666;
+    transform: translateY(2px);
+}
+
+#activebtn:active {
+    box-shadow: 0 4px #666;
+    transform: translateY(2px);
+}
+#compbtn:active {
+    box-shadow: 0 4px #666;
+    transform: translateY(2px);
+}
+#alltaskbtn:active {
+    box-shadow: 0 4px #666;
+    transform: translateY(2px);
+}

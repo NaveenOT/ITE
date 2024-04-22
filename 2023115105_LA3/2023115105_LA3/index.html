@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+    
+    <html lang="en">
+        <head>
+            <title>INDIAN CHAI</title>
+            <link rel="stylesheet" type="text/css" href="css/style.css">
+            <meta charset="UTF-8">
+            <meta name="lang" content="en">
+            <meta name="author" content ="Naveen">          
+        <style>
+            .divalign{
+                width: 50%;
+                padding: 20px;
+                float: left;
+                
+            }
+            .divcontainer{
+                display:flex;
+            }
+        </style>
+        </head>
+        <body>
+            <h1>THE INDIAN CHAI</h1>
+            <hr>
+            <br>
+            
+            <form action="#indianchai" method="post">
+                <fieldset id="indianchai" style="background-color:#ebd9c2">
+                    <legend><h2 class="heading">About Yourself</h2></legend>
+                <label for="name">Name</label><br>
+                <input type="text" name="name"  id="name" size ="30" placeholder="Enter Your Name">
+                <br><br>
+                <label for="email">E-mail ID</label><br>
+                <input type="text" name="email" id="email" placeholder="Enter Your E-mail" size="30">
+                <br><br>
+                <label for="locality">Locality</label><br>
+                <select name="locality" id="locality">
+                    <option value="Besant Nagar">Besant Nagar</option>
+                    <option value="Kotturpuram">Kotturpuram</option>
+                    <option value="adyar">Adyar</option>
+                    <option value="AnnaNagar">Anna Nagar</option>
+                    <option value="Velachery">Velachery</option>
+                    <option value="Alwarpet">Alwarpet</option>
+                </select>   
+            </fieldset>
+            <br><br>
+            
+                <fieldset style="background-color: #ebd9c2;">
+                    <legend class="heading" style="font-size: large;">Where Would You Like To Order From</legend>
+                    <label for="location">Location of Shop</label>
+                    <br>
+                    <input type="radio" name="location" id="location" value="annanagar">
+                    <label for="location" style="padding-right:50px;">Anna Nagar</label>
+                    <input type="radio" name="location" value="mylapore">
+                    <label for="location">Mylapore</label><br>
+                    <br>
+                    <label for="locality" id="how">How Did You Get To Know About Us</label>
+                    <input type="text" size="50" name="how" placeholder="How Did You Find Out About Us">
+                </fieldset>
+
+            
+            <br>
+            
+                <fieldset style="background-color: #ebd9c2;">
+                    <legend class="heading" style="font-size: large;">Your Order</legend>
+                    <h3 class="heading">DRINKS !</h3>
+                    <label for="tea">Hot Varieties</label>
+                    <select name="tea" id="tea">
+                        <optgroup label="Tea">
+                            <option value="Dum Tea">Dum Tea</option>
+                            <option value="Ginger Tea">Ginger Tea</option>
+                            <option value="Masala Chai">Masala Chai</option>
+                        </optgroup>
+                        <optgroup label="Coffee">
+                            <option value="Black Coffee">Black Coffee</option>
+                            <option value="Cold Coffee">Cold Coffee</option>
+                            <option value="Hot Coffee">Hot Coffee</option>
+                        </optgroup>
+                        <option value="nil">NONE</option>
+                        </select>
+                        <select>
+                            <option value="0">0</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                        </select>
+                        <br><br>
+
+                        <input type="radio" name="size" id="size" value="Regular">
+                        <label for="size"> Regular</label>
+                        
+                        <input type="radio" name="size" value="large">
+                        <label for="size"> Large</label>
+                        <br><br>
+
+                        <label for="juice">Juice Varieties</label>
+                        <select name="juice" id="juice">
+                            <optgroup label="JUICES">
+                                <option value="Apple">Apple Juice</option>
+                                <option value="Orange">Ginger Tea</option>
+                                <option value="Pomogranete">Pomogranete Juice</option>
+                            </optgroup>
+
+                            </select>
+                            <select>
+                                <option value="0">0</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                            </select>     
+                            <br><br>
+                            <input type="radio" name="size" id="sizes" value="Regular">
+                        <label for="sizes"> Regular</label>
+                        
+                        <input type="radio" name="size" value="large">
+                        <label for="sizes"> Large</label>
+                        <br>  
+                        <h2 class="heading"><u>QUICK BITES</u></h2>         
+                        <div class="heading">
+                        <input type="checkbox" name="bite" id="puff">
+                        <label for="puff">Veg Puffs</label>
+                        <select>
+                            <option value="0">0</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                        </select>
+                        <br>
+                        <input type="checkbox" name="bite" id="samosa">
+                        <label for="samosa">Samosa</label>
+                        <select>
+                            <option value="0">0</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                        </select>
+                    </div>
+                        <h3 class="heading">SANDWICHES</h3>
+                        <div class="divcontainer">
+                        <div class="divalign">
+                            <h4>Monday</h4>
+                        <input type="checkbox" name="snack" id="snacks" value="cbs">
+                        <label for="snacks">CHEESE BURST SANDWICH</label>
+                        <select>
+                            <option value="0">0</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                        </select>
+                        <br>
+                        <input type="checkbox" name="snack" value="pts">
+                        <label for="snack">PANEER TIKKA SANDWICH</label>
+                        <select>
+                            <option value="0">0</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                        </select>
+                        <br>
+                         <input type="checkbox" name="snack" value="cts">
+                        <label for="snack">CHICKEN TIKKA SANDHICH</label>
+                        <select>
+                            <option value="0">0</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                        </select>
+                    </div>
+                        <div><br>
+                            <h4>Tuesday</h4>
+                        <input type="checkbox" name="snack" value="cs">
+                        <label for="snack">CORN SANDWICH</label>
+                        <select>
+                            <option value="0">0</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                        </select>
+                        <br>
+                        <input type="checkbox" name="snack" value="pts">
+                        <label for="snack">PANEER TIKKA SANDWHICH</label>
+                        <select>
+                            <option value="0">0</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                        </select> 
+                        <br>
+                         <input type="checkbox" name="snack" value="cks">
+                        <label for="snack">CHICKEN KEEMA SANDWWICH</label>
+                        <select>
+                            <option value="0">0</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                        </select>
+                        </div>
+                    </div>
+                    <div class="divcontainer">
+                        <div class = "divalign">
+                            <h4>Wednesday</h4>
+                        <input type="checkbox" name="snack" value="pcs">
+                        <label for="snack">PANEER CHEESE SANDWICH</label>
+                        <select>
+                            <option value="0">0</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                        </select>
+                        <br>
+                        <input type="checkbox" name="snack" value="pts">
+                        <label for="snack">PANEER TIKKA SANDWICH</label>
+                        <select>
+                            <option value="0">0</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                        </select> 
+                        <br>
+                         <input type="checkbox" name="snack" value="ccs">
+                        <label for="snack">CHICKEN CHEESE SANDWICH</label>
+                        <select>
+                            <option value="0">0</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                        </select>    
+                    </div>
+                        <div class="divalign">
+                            <h4>Thursday</h4>
+                        <input type="checkbox" name="snack" value="cbs">
+                        <label for="snack">CHEESE BURST SANDWICH</label>
+                        <select>
+                            <option value="0">0</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                        </select>
+                        <br>
+                        <input type="checkbox" name="snack" value="pts">
+                        <label for="snack">PANEER TIKKA SANDWICH</label>
+                        <select>
+                            <option value="0">0</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                        </select> 
+                        <br>
+                         <input type="checkbox" name="snack" value="vs">
+                        <label for="snack">VEG SANDWICH</label>
+                        <select>
+                            <option value="0">0</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                        </select>    
+                    </div>
+                    </div>
+                    <div class="divcontainer">
+                        <div class = "divalign">
+                            <h4>Friday</h4>
+                        <input type="checkbox" name="snack" value="vcs">
+                        <label for="snack">VEG CHEESE SANDWICH</label>
+                        <select>
+                            <option value="0">0</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                        </select>
+                        <br>
+                        <input type="checkbox" name="snack" value="pts">
+                        <label for="snack">PANEER TIKKA SANDWICH</label>
+                        <select>
+                            <option value="0">0</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                        </select> 
+                        <br>
+                         <input type="checkbox" name="snack" value="mbs">
+                        <label for="snack">MAYO BURST SANDWICH</label>
+                        <select>
+                            <option value="0">0</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                        </select>
+                        </div>
+                        <div class="divalign">
+                            <h4>Saturday</h4>
+                        <input type="checkbox" name="snack" value="cbs">
+                        <label for="snack">CHEESE BURST SANDWICH</label>
+                        <select>
+                            <option value="0">0</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                        </select>
+                        <br>
+                        <input type="checkbox" name="snack" value="pts">
+                        <label for="snack">PANEER TIKKA SANDWHICH</label>
+                        <select>
+                            <option value="0">0</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                        </select> 
+                        <br>
+                         <input type="checkbox" name="snack" value="cts">
+                        <label for="snack">CHICKEN TIKKA SANDWHICH</label>
+                        <select>
+                            <option value="0">0</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                        </select>    
+                    </div>
+                    </div>
+                    <div style="text-align: center;">
+                        <h4>Sunday</h4>
+                        <input type="checkbox" name="snack" value="cbs">
+                        <label for="snack">CHEESE MAYO SANDWICH</label>
+                        <select>
+                            <option value="0">0</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                        </select>
+                        <br>
+                        <input type="checkbox" name="snack" value="pts">
+                        <label for="snack">PERI PERI SANDWICH</label>
+                        <select>
+                            <option value="0">0</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                        </select> 
+                        <br>
+                         <input type="checkbox" name="snack" id="snack" value="cts">
+                        <label for="snack">CHICKEN TIKKA SANDWHICH</label>
+                        <select>
+                            <option value="0">0</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                        </select>
+                    </div><br><br>
+                    <div style="text-align: center;">
+                    <input type="radio" name="take" id="take">
+                    <label for="take">Takeaway</label>
+                    <input type="radio" name="take" id="here">
+                    <label for="here">Here</label>
+                </div>
+                    <br>
+                    <div style="text-align: center;">
+                    <button type="submit" formmethod="post" >SUBMIT</button>            
+                    </div>
+                </fieldset>
+                
+            </form>
+            
+        </body>
+    </html>

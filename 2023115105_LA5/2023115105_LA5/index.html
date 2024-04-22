@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Book Concert Tickets</title>
+        <meta charset="UTF-8">
+        <meta name="lang" content="en">
+        <link rel="stylesheet" type="text/css" href="sub/style.css">
+    </head>    
+    <body>
+        <h1>Concert 81 @Music Academy</h1>
+        <div id="boxes">
+            <div id="leftbox">
+                <h2>Swarathmika Srikanth</h2> 
+                <h3 class="red">@Ragasudha Hall</h3>
+                <h3 class="blue">25.08.2023 6:15PM Mylapore</h3>
+                <h3 class="price">&#x20B9 599</h3>
+                <button onclick="decrement1()" id="btn-dec-1">-</button>   
+                <div id="counter1" style="font-size: 30px; padding-left: 10px;">0</div> 
+                <button onclick="increment1()" >+</button>
+                <button onclick="checkout()">Submit</button>
+            </div>
+            <div id="middlebox">
+                <h2>Padamshree Sriniviasan</h2>
+                <h3 class="red">@Saraswathi Hall</h3>
+                <h3 class="blue">28.08.2023 4:15 PM T.Nagar </h3>
+                <h3 class="price">&#x20B9 899</h3>
+                <button onclick="decrement2()" id="btn-dec-2">-</button>   
+                <div id="counter2" style="font-size: 30px; padding-left: 10px;" >0</div> 
+                <button onclick="increment2()" >+</button>
+                <button onclick="checkout()">Submit</button>
+            </div>
+            <div id="rightbox">
+                <h2>K.Radhika</h2>
+                <h3 class="red">@Kasthuri Hall</h3>
+                <h3 class="blue">30.08.2023 5:15 PM Royapettah</h3>
+                <h3 class="price">&#x20B9 699</h3>
+                <button onclick="decrement3()" id="btn-dec-3">-</button>   
+                <div id="counter3" style="font-size: 30px; padding-left: 10px;">0</div> 
+                <button onclick="increment3()">+</button>
+                <button onclick="checkout()">Submit</button>
+            </div>
+        </div><br><br>
+        <div id="checkout1"><b>TOTAL:</b><span id="checkout">0</span></div><br>
+        <div style="padding-left: 20px;"><button type="submit" onclick="openpage()">Checkout</button></div>
+        <script>
+            let counter1 = counter2 = counter3 = 0;
+            const countervalue1 = document.getElementById("counter1");
+            const countervalue2 = document.getElementById("counter2");
+            const countervalue3 = document.getElementById("counter3");
+            function increment1(){
+                counter1++;
+                countervalue1.innerHTML = counter1;
+                if(counter1 > 0){
+                    document.getElementById("btn-dec-1").style.visibility = "visible";
+                }
+            }
+            function decrement1(){
+                counter1--;
+                countervalue1.innerHTML = counter1;
+                if(counter1 == 0){
+                    document.getElementById("btn-dec-1").style.visibility = "hidden";
+                }
+            }
+            function increment2(){
+                counter2++;
+                countervalue2.innerHTML = counter2;
+                if(counter2 > 0){
+                    document.getElementById("btn-dec-2").style.visibility = "visible";
+                }
+            }
+            function decrement2(){
+                counter2--;
+                countervalue2.innerHTML = counter2;
+                if(counter2 == 0){
+                    document.getElementById("btn-dec-2").style.visibility = "hidden";
+                }
+            }
+            function increment3(){
+                counter3++;
+                countervalue3.innerHTML = counter3;
+                if(counter3 > 0){
+                    document.getElementById("btn-dec-3").style.visibility = "visible";
+                }
+            }
+            function decrement3(){
+                counter3--;
+                countervalue3.innerHTML = counter3;
+                if(counter3 == 0){
+                    document.getElementById("btn-dec-3").style.visibility = "hidden";
+                }
+            }
+            let finalprice = 0;
+            const checkoutval = document.getElementById("checkout");
+            function checkout(){
+                finalprice = (599 * counter1) + (counter2 * 899) + (counter3 * 699);
+                checkoutval.innerHTML = finalprice;
+                localStorage.setItem("price", finalprice);
+            }
+            function openpage(){
+                if(finalprice > 0){
+                window.location.href = "sub/checkout.html";
+                }else{
+                    alert("Add Items To The Cart")
+                }
+            }
+            
+        </script>
+    </body>
+</html>

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Checkout!
+        </title>
+    </head>
+    <body>
+        <h1 style="padding-left: 20px; padding-top: 5px;">Your Total is <span id="finalprice"></span> Rupees</h1>
+        <br>
+        <h2 style="padding-left: 20px; padding-top: 5px;">Order Placed !!!</h2>
+        <script>
+            let x = localStorage.getItem("price");
+            document.getElementById("finalprice").innerHTML = x;
+        </script>
+    </body>
+</html>

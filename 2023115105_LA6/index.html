@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>My Planner</title>
+        <meta charset="UTF-8">
+        <meta name="Author" content="Naveen">
+        <link rel="stylesheet" type="text/css" href="style.css">
+
+    </head>
+    <body>
+        <div id="planner">
+            <h1>My Planner</h1>
+            <div class="container">
+                <div id="inputbox">
+                <textarea id="inputtask" placeholder="AddTask" rows="3" cols="60">
+                </textarea>
+                </div>
+                <div id="addtask">
+                    <button onclick="addTask()" id="addtaskbtn">Add Task</button>
+                </div>
+            
+            </div>
+            <div>
+            <ul id="displaytasks">
+            </ul>
+            </div>
+            <button onclick = "allTasks()" id="alltaskbtn">All Tasks</button>
+            <button onclick="selectActive()" id="activebtn">Active</button>
+            <button onclick="selectCompleted()" id="compbtn">Completed</button>
+            <button onclick="taskCnt()" id="taskcntbtn">Task Count: <span id="taskcnt"></span></button>
+        </div>
+        <script>
+            let taskbox = document.getElementById("inputtask");
+            let disp = document.getElementById("displaytasks");
+            function addTask(){
+                if(taskbox.value === ""){
+                    alert("Enter a Task into The Task Box");
+                }else{
+                    let li = document.createElement("li");
+                let task = taskbox.value;
+                let taskNode = document.createTextNode(task);
+                li.appendChild(taskNode);
+                disp.appendChild(li);
+                li.className = "active";
+                taskbox.value = "";
+                let btn1 = document.createElement("button");
+                li.appendChild(btn1);
+                btn1.innerHTML = "✓";
+                btn1.className = "complete";
+                let btn2 = document.createElement("button");
+                li.appendChild(btn2);
+                btn2.innerHTML = "X";
+                btn2.className = "del";
+                btn2.onclick = function() {
+                    let btn = this.parentElement;
+                    disp.removeChild(btn);
+                    taskCnt();
+                    
+                }
+                btn1.onclick = function(){
+                    let comp = this.parentElement;
+                    comp.style.textDecoration = "line-through";
+                    btn1.style.visibility="hidden";
+                    comp.className = "completed";
+                }
+                taskCnt();
+                }
+            }
+            
+            let alltasks = document.getElementsByTagName("li");
+            let completedtasks = document.getElementsByClassName("completed");
+            let tasksArray = Array.from(alltasks);
+            function selectCompleted(){
+                    let tasksArray = Array.from(alltasks);
+                    let i;
+                    for(i  = 0; i < tasksArray.length; i++){
+                        if(tasksArray[i].classList.contains("completed")){
+                            tasksArray[i].style.display = "list-item";
+                        }else{
+                            tasksArray[i].style.display = "none";
+                        }
+                    }  
+                }
+                function selectActive(){
+                     let i;
+                    let tasksArray = Array.from(alltasks);
+                        for(i  = 0; i < tasksArray.length; i++){
+                            if(tasksArray[i].classList.contains("active")){
+                            tasksArray[i].style.display = "list-item";
+                        }else{
+                            tasksArray[i].style.display = "none";
+                        }
+                    }
+                }
+                function allTasks(){
+                    let i;
+                    let tasksArray = Array.from(alltasks);
+                    for(i = 0; i < tasksArray.length; i++){
+                        tasksArray[i].style.display = "list-item";
+                    }
+                }
+                function taskCnt(){
+                    let tasksArray = Array.from(alltasks);;
+                    document.getElementById("taskcnt").innerHTML = tasksArray.length;
+                }
+            
+            
+        
+        </script>
+    </body>
+</html>
