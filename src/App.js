@@ -33,48 +33,56 @@ function App() {
       question: "Which state is famous for its temples?",
       options: ["Tamilnadu", "Andhrapradesh", "Karnataka", "Madhyapradesh"],
       correctoption: "Tamilnadu"
+    },
+    {
+
     }
+
     
   ];
   const [cnt, setCnt] = useState(1);
   const [mark, setMark] = useState(1);
-  const increaseMark = () =>{
-    const selectedoption = document.querySelector('input[name="options"]:checked').value;
-    const correctans = questions[cnt].correctoption;
-    if(selectedoption === correctans){
-      setMark(mark + 1);
-    }
-  }
-  const increaseCnt = () =>{
-    setCnt(cnt + 1);
-  }
-  const decreaseCnt = () =>{
-    setCnt(cnt - 1);
-  }
-  const nextFunction = () =>{
-      increaseCnt();
-      increaseMark(cnt);
-      console.log({mark});
-      
-  }
-  const finishFunction = () =>{
-   document.querySelector('#dispquestion').innerHTML = `You Scored ${mark} out of 5`;   
-  }
+
   
+  const finishFunction = (no) =>{
+    if(questions[cnt].options[no] === questions[cnt].correctoption){
+      console.log("true");
+      setMark(mark + 1);
+      console.log(mark);     
+  }
+   document.querySelector('#dispquestion').innerHTML = `You Scored ${mark} out of 5`;   
+   console.log(mark)
+   console.log(questions[cnt].options[no], questions[cnt].correctoption)
+  }
+
+ const handleOption = (no) => {
+ 
+  if(questions[cnt].options[no] === questions[cnt].correctoption){
+    console.log("true");
+    setMark(mark + 1);
+    console.log(mark);     
+}
+if (cnt === 5) {
+  finishFunction(no);
+} else {
+  setCnt(cnt + 1);
+}
+}
+ 
+ 
+
   
 return(
     <div className="App">
         <div id="dispquestion">{questions[cnt].question}
-        <input type="radio" name="options" value = {questions[cnt].options[0]}/> <label>{questions[cnt].options[0]}</label>
-        <input type="radio" name="options" value = {questions[cnt].options[1]}/> <label>{questions[cnt].options[1]}</label>
-        <input type="radio" name="options" value = {questions[cnt].options[2]}/> <label>{questions[cnt].options[2]}</label>
-        <input type="radio" name="options" value = {questions[cnt].options[3]}/> <label>{questions[cnt].options[3]}</label>
+        <br></br>
+        <button onClick={()=>handleOption(0)}>{questions[cnt].options[0]}</button><br></br>
+        <button onClick={()=>handleOption(1)}>{questions[cnt].options[1]}</button><br></br>
+        <button onClick={()=>handleOption(2)}>{questions[cnt].options[2]}</button><br></br>
+        <button onClick={()=>handleOption(3)}>{questions[cnt].options[3]}</button><br></br>
         <div disabled={cnt === 5}>Question Number : {cnt}</div>
-        
-        <button onClick={decreaseCnt} disabled={cnt === 1}>Prev</button>
-        <button onClick={nextFunction} disabled={cnt === 5}>Next</button>
         </div>
-        {cnt === 5 && <button onClick={finishFunction}>Finish</button>}
+    
         
         
         
