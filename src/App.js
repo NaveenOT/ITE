@@ -13,79 +13,66 @@ function App() {
     {
       no: 2,
       question: "What is the largest state in India?",
-      options: ["Rajasthan", "Uttarpradesh", "Karnataka", "Guajarat"],
+      options: ["Rajasthan", "Uttar Pradesh", "Karnataka", "Gujarat"],
       correctoption: "Rajasthan"
     },
     {
       no: 3,
-      question: "What is the population of India (in billions)",
+      question: "What is the population of India (in billions)?",
       options: [1.44, 1.23, 1.55, 2.1],
       correctoption: 1.44
     },
     {
       no: 4,
-      question: "Which State has the highest GDP",
-      options: ["Maharashtra", "TamilNadu", "AndhraPradesh", "Kolkata"],
+      question: "Which State has the highest GDP?",
+      options: ["Maharashtra", "Tamil Nadu", "Andhra Pradesh", "West Bengal"],
       correctoption: "Maharashtra"
     },
     {
       no: 5,
       question: "Which state is famous for its temples?",
-      options: ["Tamilnadu", "Andhrapradesh", "Karnataka", "Madhyapradesh"],
-      correctoption: "Tamilnadu"
+      options: ["Tamil Nadu", "Andhra Pradesh", "Karnataka", "Madhya Pradesh"],
+      correctoption: "Tamil Nadu"
     },
-    {
+  ];
 
+  const [cnt, setCnt] = useState(1);
+  const [mark, setMark] = useState(0);
+  const [showResult, setShowResult] = useState(false);
+
+  const handleOption = (no) => {
+    if (questions[cnt].options[no] === questions[cnt].correctoption) {
+      setMark(prevMark => prevMark + 1);
     }
 
-    
-  ];
-  const [cnt, setCnt] = useState(1);
-  const [mark, setMark] = useState(1);
+    if (cnt === questions.length - 1) {
+      setShowResult(true);
+    } else {
+      setCnt(cnt + 1);
+    }
+  };
 
-  
-  const finishFunction = (no) =>{
-    if(questions[cnt].options[no] === questions[cnt].correctoption){
-      console.log("true");
-      setMark(mark + 1);
-      console.log(mark);     
-  }
-   document.querySelector('#dispquestion').innerHTML = `You Scored ${mark} out of 5`;   
-   console.log(mark)
-   console.log(questions[cnt].options[no], questions[cnt].correctoption)
-  }
-
- const handleOption = (no) => {
- 
-  if(questions[cnt].options[no] === questions[cnt].correctoption){
-    console.log("true");
-    setMark(mark + 1);
-    console.log(mark);     
-}
-if (cnt === 5) {
-  finishFunction(no);
-} else {
-  setCnt(cnt + 1);
-}
-}
- 
- 
-
-  
-return(
+  return (
     <div className="App">
-        <div id="dispquestion">{questions[cnt].question}
-        <br></br>
-        <button onClick={()=>handleOption(0)}>{questions[cnt].options[0]}</button><br></br>
-        <button onClick={()=>handleOption(1)}>{questions[cnt].options[1]}</button><br></br>
-        <button onClick={()=>handleOption(2)}>{questions[cnt].options[2]}</button><br></br>
-        <button onClick={()=>handleOption(3)}>{questions[cnt].options[3]}</button><br></br>
-        <div disabled={cnt === 5}>Question Number : {cnt}</div>
+      {!showResult ? (
+        <div id="dispquestion">
+          {questions[cnt].question}
+          <br />
+          <button onClick={() => handleOption(0)}>{questions[cnt].options[0]}</button>
+          <br />
+          <button onClick={() => handleOption(1)}>{questions[cnt].options[1]}</button>
+          <br />
+          <button onClick={() => handleOption(2)}>{questions[cnt].options[2]}</button>
+          <br />
+          <button onClick={() => handleOption(3)}>{questions[cnt].options[3]}</button>
+          <br />
+          <div>Question Number: {cnt}</div>
         </div>
-    
-        
-        
-        
+      ) : (
+        <div>
+          You Scored {mark} out of 5
+        </div>
+      )}
     </div>
   );
 }
